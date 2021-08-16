@@ -1,32 +1,43 @@
+import './style.css';
+
 const taskList = [
   {
     description: "Clean the bathroom",
     completed: false,
-    index: 0,
+    index: 2,
   },
   {
     description: "Ride a bicycle",
-    completed: false,
+    completed: true,
     index: 1,
   },
   {
     description: "Go shopping",
     completed: false,
-    index: 2,
+    index: 0,
   }
 ];
 
+const tasks = document.getElementById('tasks');
 function populateList () {
-  const tasks = document.getElementById('tasks');
-  tasks.style.display = 'flex';
-  const taskElement = document.createElement('li');
-  const square = document.createElement('i');
-  const desc = document.createElement('p');
   taskList.forEach((task) => {
-    task.completed ? square.classList.add('far','fa-square') : square.classList('fas', 'fa-check');
+    const taskElement = document.createElement('li');
+    const left = document.createElement('span');
+    const right = document.createElement('span');
+    const square = document.createElement('i');
+    const desc = document.createElement('p');
+    task.completed ? square.classList.add('fas', 'fa-check') : square.classList.add('far','fa-square') ;
      desc.innerHTML = task.description;
-    taskElement.style.order = 'index';
-    tasks.innerHTML += square + desc 
-  })
-}
+    taskElement.style.order = task.index;
+    left.innerHTML = square.outerHTML + desc.outerHTML;
+    right.innerHTML = '<i class="fas fa-ellipsis-v"></i>'
+    taskElement.innerHTML = left.outerHTML + right.outerHTML;
+    tasks.appendChild(taskElement);
+  });
+  const clearTasks = document.createElement('button');
+  clearTasks.setAttribute('id', 'clearTasks');
+  clearTasks.innerText = 'Clear all completed';
+  tasks.appendChild(clearTasks);
+};
 populateList();
+console.log(tasks);

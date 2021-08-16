@@ -1,42 +1,46 @@
-/*
-    ==============================================
-                ****** RESET ******
-    ==============================================
-*/
-body {
-  margin: 0;
-}
-
-:root {
-  --color-red: #f42;
-  --bg-color-red: #f42;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
+  border: 1px lightgray solid;
+  box-shadow: -5px 5px 5px lightgrey, 5px 5px 5px lightgrey;
+  width: 400px;
+  justify-content: flex-start;
+  margin: 40px auto;
+  padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: white;
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: lightgrey solid 1px;
+  padding: 5px;
+  height: 2rem;
+  padding: 10px;
+}
+span {
+  display: flex;
 }
 
-a:hover {
-  color: #333;
+p { 
+  margin: 0;
+
 }
 
-/*
-    ==============================================
-                ****** GLOBAL ******
-    ==============================================
-*/
+i {
+  margin: 0 10px;
+}
+
+input {
+  font-style: italic;
+  border: none;
+}
+
+#clearTasks {
+  text-align: center;
+  order: 99999999999999;
+  height: 3rem;
+  background-color: #f6f6f6;
+  border: none;
+}
