@@ -15,7 +15,6 @@ li {
   justify-content: space-between;
   align-items: center;
   border: lightgrey solid 1px;
-  padding: 5px;
   height: 2rem;
   padding: 10px;
 }
@@ -26,7 +25,6 @@ span {
 
 p {
   margin: 0;
-
 }
 
 i {
