@@ -2,23 +2,7 @@ import './style.css';
 import change from './status';
 
 // eslint-disable-next-line import/prefer-default-export
-let taskList = [
-  {
-    description: 'Clean the bathroom',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Ride a bicycle',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Go shopping',
-    completed: false,
-    index: 0,
-  },
-];
+let taskList = [];
 
 function saveList(list) {
   const taskList = JSON.stringify(list);
