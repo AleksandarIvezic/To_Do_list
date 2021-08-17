@@ -1,47 +1,49 @@
-![](https://img.shields.io/badge/myapp-blueviolet)
+![](https://img.shields.io/badge/microverse-blueviolet)
 
-# Project Name
+# To Do list
 
-> One paragraph statement about the project.
+> This is a simple HTML list of To Do tasks. The list is styled according to the specifications. This simple web page is built using webpack and served by a webpack dev server.
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+![screenshot](./Screenshot-To-Do-list.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
+- HTML5
+- CSS3
+- JavaScript
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Node.js
+- npm
+
 ### Setup
 
+Clone the repository with:
+
+```
+git clone https://github.com/ShinobiWarior/To_Do_list.git
+```
+or download [ZIP file](https://github.com/ShinobiWarior/To_Do_list/archive/refs/heads/list-structure-feature.zip)
+
 ### Install
-
+To install all dependancies run:
+```
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader 
+```
 ### Usage
+To use the application run the next commands:
+```
+npm run build
 
-### Run tests
-
-### Deployment
-
-
-
-## Authors
+npm run start
+```
+## Author
 
 👤👤 **Aleksandar Ivezic**
 
@@ -49,18 +51,11 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@AIvezic](https://twitter.com/AIvezic)
 - LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/ShinobiWarior/To_Do_list/issues/).
 
 ## Show your support
 
@@ -68,9 +63,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- This project was Inspired by [Microverse](https://www.microverse.org/?grsf=w9rx3c)
 
 ## 📝 License
 
