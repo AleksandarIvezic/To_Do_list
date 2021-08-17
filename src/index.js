@@ -1,5 +1,7 @@
 import './style.css';
+import change from './status';
 
+// eslint-disable-next-line import/prefer-default-export
 const taskList = [
   {
     description: 'Clean the bathroom',
@@ -26,8 +28,18 @@ function populateList() {
     const right = document.createElement('span');
     const square = document.createElement('i');
     const desc = document.createElement('p');
-    // eslint-disable-next-line no-unused-expressions
-    task.completed ? square.classList.add('fas', 'fa-check') : square.classList.add('far', 'fa-square');
+    if (task.completed) {
+      square.classList.add('fas', 'fa-check');
+      taskElement.addEventListener('click', (e) => {
+        change(e, task);
+      });
+    } else {
+      square.classList.add('far', 'fa-square');
+      taskElement.addEventListener('click', (e) => {
+        change(e, task);
+      });
+    }
+
     desc.innerHTML = task.description;
     taskElement.style.order = task.index;
     left.innerHTML = square.outerHTML + desc.outerHTML;
