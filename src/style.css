@@ -19,11 +19,12 @@ li {
   height: 2rem;
   padding: 10px;
 }
+
 span {
   display: flex;
 }
 
-p { 
+p {
   margin: 0;
 
 }
