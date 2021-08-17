@@ -2,7 +2,7 @@ import './style.css';
 import change from './status';
 
 // eslint-disable-next-line import/prefer-default-export
-const taskList = [
+let taskList = [
   {
     description: 'Clean the bathroom',
     completed: false,
@@ -20,6 +20,11 @@ const taskList = [
   },
 ];
 
+function saveList(list) {
+  const taskList = JSON.stringify(list);
+  localStorage.setItem('taskList', taskList);
+}
+
 const tasks = document.getElementById('tasks');
 function populateList() {
   taskList.forEach((task) => {
@@ -32,11 +37,13 @@ function populateList() {
       square.classList.add('fas', 'fa-check');
       taskElement.addEventListener('click', (e) => {
         change(e, task);
+        saveList(taskList);
       });
     } else {
       square.classList.add('far', 'fa-square');
       taskElement.addEventListener('click', (e) => {
         change(e, task);
+        saveList(taskList);
       });
     }
 
@@ -52,4 +59,12 @@ function populateList() {
   clearTasks.innerText = 'Clear all completed';
   tasks.appendChild(clearTasks);
 }
-populateList();
+
+function loadList() {
+  if (localStorage.getItem('taskList')) {
+    taskList = JSON.parse(localStorage.getItem('taskList'));
+  }
+  populateList();
+}
+
+window.onload = loadList();
