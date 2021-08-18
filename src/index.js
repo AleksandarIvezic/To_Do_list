@@ -1,7 +1,7 @@
 import './style.css';
 import change from './status';
 import {
-  Task, addTask, editTask, removeTask, clearCompleted,
+  Task, addTask, editTask, addBean, removeTask, clearCompleted,
 } from './crud';
 
 let taskList = [];
@@ -40,6 +40,7 @@ function populateList() {
     }
     taskElement.addEventListener('dblclick', (e) => {
       editTask(e, task);
+      addBean(e);
       saveList(taskList);
     });
 

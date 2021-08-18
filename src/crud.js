@@ -31,10 +31,20 @@ const removeTask = (taskList, task) => {
   taskList.filter((rmTask) => rmTask.index !== task.index);
 };
 
+const addBean = (e, taskList, task) => {
+  console.log(e.target);
+  const icon = e.target.parentNode.parentNode.lastChild.firstChild
+  icon.className = 'fas fa-trash-alt';
+  console.log(icon);
+  icon.onclick = () => {
+    removeTask(taskList, task);
+  };
+};
+
 const clearCompleted = (taskList) => {
   taskList.filter((task) => !task.completed);
 };
 
 export { 
-  Task, addTask, editTask, removeTask, clearCompleted,
+  Task, addTask, editTask, addBean, removeTask, clearCompleted,
 };
