@@ -42,10 +42,20 @@ input:focus {
   outline: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 #clearTasks {
   text-align: center;
   order: 99999999999999;
   height: 3rem;
   background-color: #f6f6f6;
   border: none;
+}
+
+#push {
+  border: none;
+  background: none;
+  padding: 0;
 }
