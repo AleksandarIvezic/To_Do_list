@@ -11,8 +11,20 @@ const addTask = (taskList, description) => {
   taskList.push(task);
 };
 
-const editTask = () => {
-  this.setAttribute('contenteditable', 'true');
+const editTask = (e, task) => {
+  if (e.target.tagName === 'P') {
+    const newInput = document.createElement('input');
+    newInput.setAttribute('id', task.index);
+    newInput.value = e.target.textContent;
+    e.target.textContent = '';
+    e.target.appendChild(newInput);
+    const input = document.getElementById(task.index);
+    input.onchange = () => {
+      task.description = input.value;
+      input.value = '';
+      e.target.innerText = task.description;
+    };
+  }
 };
 
 const removeTask = (taskList, task) => {

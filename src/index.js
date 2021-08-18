@@ -1,8 +1,16 @@
 import './style.css';
 import change from './status';
+import {
+  Task, addTask, editTask, removeTask, clearCompleted,
+} from './crud';
 
-// eslint-disable-next-line import/prefer-default-export
 let taskList = [];
+const input = document.getElementById('input');
+const push = document.getElementById('push');
+
+push.addEventListener('click', () => {
+  addTask(taskList, input.value);
+});
 
 function saveList(list) {
   const taskList = JSON.stringify(list);
@@ -30,6 +38,10 @@ function populateList() {
         saveList(taskList);
       });
     }
+    taskElement.addEventListener('dblclick', (e) => {
+      editTask(e, task);
+      saveList(taskList);
+    });
 
     desc.innerHTML = task.description;
     taskElement.style.order = task.index;
