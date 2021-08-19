@@ -77,6 +77,12 @@ function populateList() {
   clearTasks.setAttribute('id', 'clearTasks');
   clearTasks.innerText = 'Clear all completed';
   tasks.appendChild(clearTasks);
+  const clearCompletedTasks = document.getElementById('clearTasks');
+  clearCompletedTasks.onclick = () => {
+    taskList = clearCompleted(taskList);
+    saveList(taskList);
+    populateList();
+  };
 }
 
 push.addEventListener('click', () => {

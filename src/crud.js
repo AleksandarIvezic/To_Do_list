@@ -43,9 +43,7 @@ const updateTask = (e, task) => {
 
 const removeTask = (taskList, task) => taskList.filter((rmTask) => rmTask.index !== task.index);
 
-const clearCompleted = (taskList) => {
-  taskList.filter((task) => !task.completed);
-};
+const clearCompleted = (taskList) => taskList.filter((task) => !task.completed);
 
 export {
   Task, addTask, editTask, updateTask, removeTask, clearCompleted,
