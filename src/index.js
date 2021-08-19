@@ -92,6 +92,15 @@ push.addEventListener('click', () => {
   populateList();
 });
 
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addTask(taskList, input.value);
+    input.value = '';
+    saveList(taskList);
+    populateList();
+  }
+});
+
 function loadList() {
   if (localStorage.getItem('taskList')) {
     const list = JSON.parse(localStorage.getItem('taskList'));
