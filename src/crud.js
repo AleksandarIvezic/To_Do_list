@@ -13,8 +13,10 @@ const addTask = (taskList, description) => {
 
 const addBean = (e) => {
   const icon = e.target.parentNode.parentNode.lastChild.firstChild;
-  icon.className = 'fas fa-trash-alt';
-  icon.setAttribute('id', 'trash');
+  if (icon.tagName === 'I') {
+    icon.className = 'fas fa-trash-alt';
+    icon.setAttribute('id', 'trash');
+  }
 };
 
 const removeBean = () => {
@@ -39,14 +41,12 @@ const updateTask = (e, task) => {
   removeBean();
 };
 
-const removeTask = (taskList, task) => {
-  return taskList.filter((rmTask) => rmTask.index !== task.index);
-};
+const removeTask = (taskList, task) => taskList.filter((rmTask) => rmTask.index !== task.index);
 
 const clearCompleted = (taskList) => {
   taskList.filter((task) => !task.completed);
 };
 
 export {
-  Task, addTask, editTask, addBean, removeBean, updateTask, removeTask, clearCompleted,
+  Task, addTask, editTask, updateTask, removeTask, clearCompleted,
 };

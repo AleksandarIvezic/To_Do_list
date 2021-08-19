@@ -4,7 +4,7 @@ import {
   addTask, editTask, updateTask, removeTask, clearCompleted,
 } from './crud';
 
-const taskList = [];
+let taskList = [];
 const input = document.getElementById('input');
 const push = document.getElementById('push');
 
@@ -45,22 +45,33 @@ function populateList() {
     tasks.appendChild(taskElement);
     desc = document.getElementById(`desc-${task.index}`);
     desc.addEventListener('click', (e) => {
-      e.preventDefault();
-      // console.log(e.target);
       editTask(e, task);
-      desc.removeEventListener('click', (e) => {
-        e.preventDefault();
-        editTask(e, task);
-      });
+      const trash = document.getElementById('trash');
+      trash.onclick = () => {
+        taskList = removeTask(taskList, task);
+        saveList(taskList);
+        populateList();
+      };
     });
+
     desc.addEventListener('focusout', (e) => {
       updateTask(e, task);
+      saveList(taskList);
     });
+
     desc.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         updateTask(e, task);
+        saveList(taskList);
       }
     });
+
+    const trash = document.getElementById('trash');
+    if (trash) {
+      trash.onclick = () => {
+        taskList = removeTask(taskList, task);
+      };
+    }
   });
   const clearTasks = document.createElement('button');
   clearTasks.setAttribute('id', 'clearTasks');
