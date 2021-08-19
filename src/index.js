@@ -1,16 +1,12 @@
 import './style.css';
 import change from './status';
 import {
-  Task, addTask, editTask, addBean, removeTask, clearCompleted,
+  addTask, editTask, updateTask, removeTask, clearCompleted,
 } from './crud';
 
-let taskList = [];
+const taskList = [];
 const input = document.getElementById('input');
 const push = document.getElementById('push');
-
-push.addEventListener('click', () => {
-  addTask(taskList, input.value);
-});
 
 function saveList(list) {
   const taskList = JSON.stringify(list);
@@ -18,13 +14,16 @@ function saveList(list) {
 }
 
 const tasks = document.getElementById('tasks');
+
 function populateList() {
+  tasks.innerHTML = '';
   taskList.forEach((task) => {
     const taskElement = document.createElement('li');
     const left = document.createElement('span');
     const right = document.createElement('span');
     const square = document.createElement('i');
-    const desc = document.createElement('p');
+    let desc = document.createElement('p');
+    desc.setAttribute('id', `desc-${task.index}`);
     if (task.completed) {
       square.classList.add('fas', 'fa-check');
       taskElement.addEventListener('click', (e) => {
@@ -38,18 +37,30 @@ function populateList() {
         saveList(taskList);
       });
     }
-    taskElement.addEventListener('dblclick', (e) => {
-      editTask(e, task);
-      addBean(e);
-      saveList(taskList);
-    });
-
     desc.innerHTML = task.description;
     taskElement.style.order = task.index;
     left.innerHTML = square.outerHTML + desc.outerHTML;
     right.innerHTML = '<i class="fas fa-ellipsis-v"></i>';
     taskElement.innerHTML = left.outerHTML + right.outerHTML;
     tasks.appendChild(taskElement);
+    desc = document.getElementById(`desc-${task.index}`);
+    desc.addEventListener('click', (e) => {
+      e.preventDefault();
+      // console.log(e.target);
+      editTask(e, task);
+      desc.removeEventListener('click', (e) => {
+        e.preventDefault();
+        editTask(e, task);
+      });
+    });
+    desc.addEventListener('focusout', (e) => {
+      updateTask(e, task);
+    });
+    desc.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        updateTask(e, task);
+      }
+    });
   });
   const clearTasks = document.createElement('button');
   clearTasks.setAttribute('id', 'clearTasks');
@@ -57,9 +68,17 @@ function populateList() {
   tasks.appendChild(clearTasks);
 }
 
+push.addEventListener('click', () => {
+  addTask(taskList, input.value);
+  input.value = '';
+  saveList(taskList);
+  populateList();
+});
+
 function loadList() {
   if (localStorage.getItem('taskList')) {
-    taskList = JSON.parse(localStorage.getItem('taskList'));
+    const list = JSON.parse(localStorage.getItem('taskList'));
+    list.forEach((task) => addTask(taskList, task.description));
   }
   populateList();
 }
