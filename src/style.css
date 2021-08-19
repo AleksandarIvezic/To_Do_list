@@ -1,4 +1,4 @@
-ul {
+.container {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -7,6 +7,11 @@ ul {
   width: 400px;
   justify-content: flex-start;
   margin: 40px auto;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
   padding: 0;
 }
 
@@ -42,10 +47,22 @@ input:focus {
   outline: none;
 }
 
+button:hover,
+i:hover {
+  cursor: pointer;
+}
+
 #clearTasks {
   text-align: center;
   order: 99999999999999;
   height: 3rem;
+  width: 100%;
   background-color: #f6f6f6;
   border: none;
+}
+
+#push {
+  border: none;
+  background: none;
+  padding: 0;
 }
