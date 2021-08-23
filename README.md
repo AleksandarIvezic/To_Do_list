@@ -22,6 +22,9 @@ To get a local copy up and running follow these simple example steps.
 - Node.js
 - npm
 
+## Live Demo
+[Live Demo Link](https://shinobiwarior.github.io/To_Do_list/)
+
 ### Setup
 
 Clone the repository with:
