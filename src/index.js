@@ -65,13 +65,6 @@ function populateList() {
         saveList(taskList);
       }
     });
-
-    const trash = document.getElementById('trash');
-    if (trash) {
-      trash.onclick = () => {
-        taskList = removeTask(taskList, task);
-      };
-    }
   });
   const clearTasks = document.createElement('button');
   clearTasks.setAttribute('id', 'clearTasks');
