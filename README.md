@@ -61,6 +61,12 @@ npm test
 - Twitter: [@AIvezic](https://twitter.com/AIvezic)
 - LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
+👤👤 **Daniel M. Matongo**
+
+- GitHub: [@mmatongo](https://github.com/mmatongo)
+- LinkedIn: [Daniel M. Matongo](https://www.linkedin.com/in/mmatongo)
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
