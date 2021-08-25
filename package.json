@@ -35,5 +35,8 @@
   },
   "jest": {
     "verbose": true
+  },
+  "dependencies": {
+    "@jest/globals": "^27.0.6"
   }
 }
