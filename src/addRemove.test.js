@@ -26,4 +26,9 @@ describe('Test if removeTask function', () => {
     tasksList = removeTask(tasksList, task);
     expect(tasksList).toEqual(expect.not.arrayContaining([{ description: 'Task 2', completed: false, index: 1 }]));
   });
+
+  it('updates the index of the tasks inside the list', () => {
+    expect(tasksList[2]).toHaveProperty('description', 'Task 4');
+    expect(tasksList[2]).toHaveProperty('index', 2);
+  });
 });
