@@ -13,4 +13,7 @@ describe('Test if addTask function', () => {
     addTask(tasksList, description);
     expect(tasksList).toEqual(expect.arrayContaining([{ description: 'Task 2', completed: false, index: 1 }]));
   });
+  it('Check if both objects are in the array', () => {
+    expect(tasksList).toEqual(expect.arrayContaining([{ description: 'Task 1', completed: false, index: 0 }, { description: 'Task 2', completed: false, index: 1 }]));
+  });
 });
