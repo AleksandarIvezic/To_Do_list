@@ -46,6 +46,13 @@ npm run build
 
 npm run start
 ```
+
+## Run tests 
+To test the project please run 
+```
+npm test
+```
+
 ## Author
 
 👤👤 **Aleksandar Ivezic**
@@ -53,6 +60,12 @@ npm run start
 - GitHub: [@Aleksandar Ivezic](https://github.com/ShinobiWarior)
 - Twitter: [@AIvezic](https://twitter.com/AIvezic)
 - LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
+
+👤👤 **Daniel M. Matongo**
+
+- GitHub: [@mmatongo](https://github.com/mmatongo)
+- LinkedIn: [Daniel M. Matongo](https://www.linkedin.com/in/mmatongo)
+
 
 ## 🤝 Contributing
 
