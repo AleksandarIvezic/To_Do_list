@@ -1,8 +1,8 @@
 import { addTask, removeTask } from './crud';
 
-describe('Test if addTask function', () => {
-  const tasksList = [];
+const tasksList = [];
 
+describe('Test if addTask function', () => {
   it('Add task to taskList', () => {
     const description = 'Task 1';
     addTask(tasksList, description);
@@ -17,3 +17,6 @@ describe('Test if addTask function', () => {
     expect(tasksList).toEqual(expect.arrayContaining([{ description: 'Task 1', completed: false, index: 0 }, { description: 'Task 2', completed: false, index: 1 }]));
   });
 });
+
+describe('Test if removeTask function', () => {  
+})
