@@ -46,6 +46,13 @@ npm run build
 
 npm run start
 ```
+
+## Run tests 
+To test the project please run 
+```
+npm test
+```
+
 ## Author
 
 👤👤 **Aleksandar Ivezic**
