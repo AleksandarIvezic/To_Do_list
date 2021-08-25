@@ -41,9 +41,19 @@ const updateTask = (e, task) => {
   removeBean();
 };
 
-const removeTask = (taskList, task) => taskList.filter((rmTask) => rmTask.index !== task.index);
+const removeTask = (taskList, task) => {
+  const newList = taskList.filter((rmTask) => rmTask.index !== task.index);
+  const updatedList = [];
+  newList.forEach((task) => addTask(updatedList, task.description));
+  return updatedList;
+};
 
-const clearCompleted = (taskList) => taskList.filter((task) => !task.completed);
+const clearCompleted = (taskList) => {
+  const newList = taskList.filter((task) => !task.completed);
+  const updatedList = [];
+  newList.forEach((task) => addTask(updatedList, task.description));
+  return updatedList;
+};
 
 export {
   Task, addTask, editTask, updateTask, removeTask, clearCompleted,

@@ -8,14 +8,14 @@ let taskList = [];
 const input = document.getElementById('input');
 const push = document.getElementById('push');
 
-function saveList(list) {
+const saveList = (list) => {
   const taskList = JSON.stringify(list);
   localStorage.setItem('taskList', taskList);
-}
+};
 
 const tasks = document.getElementById('tasks');
 
-function populateList() {
+const populateList = () => {
   tasks.innerHTML = '';
   taskList.forEach((task) => {
     const taskElement = document.createElement('li');
@@ -65,13 +65,6 @@ function populateList() {
         saveList(taskList);
       }
     });
-
-    const trash = document.getElementById('trash');
-    if (trash) {
-      trash.onclick = () => {
-        taskList = removeTask(taskList, task);
-      };
-    }
   });
   const clearTasks = document.createElement('button');
   clearTasks.setAttribute('id', 'clearTasks');
@@ -83,7 +76,7 @@ function populateList() {
     saveList(taskList);
     populateList();
   };
-}
+};
 
 push.addEventListener('click', () => {
   addTask(taskList, input.value);
@@ -101,12 +94,12 @@ input.addEventListener('keypress', (e) => {
   }
 });
 
-function loadList() {
+const loadList = () => {
   if (localStorage.getItem('taskList')) {
     const list = JSON.parse(localStorage.getItem('taskList'));
     list.forEach((task) => addTask(taskList, task.description));
   }
   populateList();
-}
+};
 
 window.onload = loadList();
