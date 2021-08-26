@@ -31,13 +31,11 @@ const editTask = (e, task) => {
   newInput.value = e.target.textContent;
   e.target.textContent = '';
   e.target.appendChild(newInput);
-  // addBean(e);
 };
 
 const updateTask = (e, task) => {
   task.description = e.target.parentNode.firstChild.value;
   e.target.parentNode.innerText = task.description;
-  removeBean();
 };
 
 const removeTask = (taskList, task) => {
@@ -55,5 +53,5 @@ const clearCompleted = (taskList) => {
 };
 
 export {
-  Task, addTask, editTask, updateTask, addBean, removeTask, clearCompleted,
+  Task, addTask, editTask, updateTask, addBean, removeTask, clearCompleted, removeBean,
 };
