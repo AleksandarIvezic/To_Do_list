@@ -1,7 +1,7 @@
 import './style.css';
 import change from './status';
 import {
-  addTask, editTask, updateTask, removeTask, clearCompleted,
+  addTask, editTask, updateTask, addBean, removeTask, clearCompleted, removeBean,
 } from './crud';
 
 let taskList = [];
@@ -46,6 +46,7 @@ const populateList = () => {
     desc = document.getElementById(`desc-${task.index}`);
     desc.addEventListener('click', (e) => {
       editTask(e, task);
+      addBean(e);
       const trash = document.getElementById('trash');
       trash.onclick = () => {
         taskList = removeTask(taskList, task);
@@ -56,12 +57,14 @@ const populateList = () => {
 
     desc.addEventListener('focusout', (e) => {
       updateTask(e, task);
+      removeBean();
       saveList(taskList);
     });
 
     desc.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         updateTask(e, task);
+        removeBean();
         saveList(taskList);
       }
     });

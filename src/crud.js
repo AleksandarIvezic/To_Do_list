@@ -29,16 +29,13 @@ const editTask = (e, task) => {
   const newInput = document.createElement('input');
   newInput.setAttribute('id', task.index);
   newInput.value = e.target.textContent;
-  newInput.setAttribute('autofocus', 'true');
   e.target.textContent = '';
   e.target.appendChild(newInput);
-  addBean(e);
 };
 
 const updateTask = (e, task) => {
   task.description = e.target.parentNode.firstChild.value;
   e.target.parentNode.innerText = task.description;
-  removeBean();
 };
 
 const removeTask = (taskList, task) => {
@@ -56,5 +53,5 @@ const clearCompleted = (taskList) => {
 };
 
 export {
-  Task, addTask, editTask, updateTask, removeTask, clearCompleted,
+  Task, addTask, editTask, updateTask, addBean, removeTask, clearCompleted, removeBean,
 };

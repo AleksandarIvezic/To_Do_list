@@ -1,5 +1,5 @@
 import { expect, it } from '@jest/globals';
-import { addTask, removeTask } from './crud';
+import { addTask, removeTask } from '../crud';
 
 describe('Test if addTask function', () => {
   const tasksList = [];
