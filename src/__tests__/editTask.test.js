@@ -12,8 +12,7 @@ describe('Test editTask', () => {
    + '</div>';
   const desc = document.getElementById('desc-0');
   const task = { description: 'Task 1', completed: false, index: 0 };
-  // spy.mockReturnValue(descMock);
-  it('check if input element is added to descMock', () => {
+  it('check if input element is added to desc element', () => {
     desc.addEventListener('click', (e) => {
       editTask(e, task);
     });
