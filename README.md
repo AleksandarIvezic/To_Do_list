@@ -2,7 +2,7 @@
 
 # To Do list
 
-> This is a simple HTML list of To Do tasks. The list is styled according to the specifications. This simple web page is built using webpack and served by a webpack dev server.
+> This is a simple HTML list of To-Do tasks. The list is styled according to the specifications. This simple web page is built using a webpack and served by a webpack dev server.
 
 ![screenshot](./Screenshot-To-Do-list.png)
 
@@ -35,7 +35,7 @@ git clone https://github.com/ShinobiWarior/To_Do_list.git
 or download [ZIP file](https://github.com/ShinobiWarior/To_Do_list/archive/refs/heads/list-structure-feature.zip)
 
 ### Install
-To install all dependancies run:
+To install all dependencies run:
 ```
 npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader 
 ```
@@ -79,7 +79,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- This project was Inspired by [Microverse](https://www.microverse.org/?grsf=w9rx3c)
+- This project was inspired by [Microverse](https://www.microverse.org/?grsf=w9rx3c)
 
 ## 📝 License
 
